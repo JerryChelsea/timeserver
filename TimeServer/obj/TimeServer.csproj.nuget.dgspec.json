@@ -4,6 +4,200 @@
     "D:\\Projects\\TimeServer\\TimeServer\\TimeServer.csproj": {}
   },
   "projects": {
+    "D:\\Projects\\TimeServer\\OnTimeClasses\\OnTimeClasses.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\TimeServer\\OnTimeClasses\\OnTimeClasses.csproj",
+        "projectName": "OnTimeClasses",
+        "projectPath": "D:\\Projects\\TimeServer\\OnTimeClasses\\OnTimeClasses.csproj",
+        "packagesPath": "C:\\Users\\jerry\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\TimeServer\\OnTimeClasses\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\jerry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Projects\\TimeServer\\OnTimeService\\OnTimeService.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\TimeServer\\OnTimeService\\OnTimeService.csproj",
+        "projectName": "OnTimeService",
+        "projectPath": "D:\\Projects\\TimeServer\\OnTimeService\\OnTimeService.csproj",
+        "packagesPath": "C:\\Users\\jerry\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\TimeServer\\OnTimeService\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\jerry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "D:\\Projects\\TimeServer\\OnTimeClasses\\OnTimeClasses.csproj": {
+                "projectPath": "D:\\Projects\\TimeServer\\OnTimeClasses\\OnTimeClasses.csproj"
+              },
+              "D:\\Projects\\TimeServer\\TimeData\\OnTimeData.csproj": {
+                "projectPath": "D:\\Projects\\TimeServer\\TimeData\\OnTimeData.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\Projects\\TimeServer\\TimeData\\OnTimeData.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\Projects\\TimeServer\\TimeData\\OnTimeData.csproj",
+        "projectName": "OnTimeData",
+        "projectPath": "D:\\Projects\\TimeServer\\TimeData\\OnTimeData.csproj",
+        "packagesPath": "C:\\Users\\jerry\\.nuget\\packages\\",
+        "outputPath": "D:\\Projects\\TimeServer\\TimeData\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\jerry\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[3.1.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "D:\\Projects\\TimeServer\\TimeServer\\TimeServer.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -31,7 +225,14 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "projectReferences": {}
+            "projectReferences": {
+              "D:\\Projects\\TimeServer\\OnTimeClasses\\OnTimeClasses.csproj": {
+                "projectPath": "D:\\Projects\\TimeServer\\OnTimeClasses\\OnTimeClasses.csproj"
+              },
+              "D:\\Projects\\TimeServer\\OnTimeService\\OnTimeService.csproj": {
+                "projectPath": "D:\\Projects\\TimeServer\\OnTimeService\\OnTimeService.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

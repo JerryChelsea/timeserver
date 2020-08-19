@@ -13,5 +13,10 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\OnTimeClasses\OnTimeClasses.csproj" />
+    <ProjectReference Include="..\OnTimeService\OnTimeService.csproj" />
+  </ItemGroup>
+
 
 </Project>

@@ -8,16 +8,16 @@ namespace OnTimeData
 {
     public partial class TimeDataContext : DbContext
     {
+        private readonly string conn =
+            "Data Source=sql2k802.discountasp.net;Initial Catalog=SQL2008_741027_jerry;Persist Security Info=True;User ID=SQL2008_741027_jerry_user;Password=Gianluca12!";
         public TimeDataContext()
         {
-        }
 
+        }
         public TimeDataContext(DbContextOptions<TimeDataContext> options)
             : base(options)
         {
         }
-
-        public virtual DbSet<LinkTypes> LinkTypes { get; set; }
         public virtual DbSet<OnTimeCustomers> OnTimeCustomers { get; set; }
         public virtual DbSet<OnTimeCustomersProjects> OnTimeCustomersProjects { get; set; }
         public virtual DbSet<OnTimeFeatures> OnTimeFeatures { get; set; }
@@ -28,18 +28,12 @@ namespace OnTimeData
         {
             if (!optionsBuilder.IsConfigured)
             {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. See http://go.microsoft.com/fwlink/?LinkId=723263 for guidance on storing connection strings.
-                optionsBuilder.UseSqlServer("Data Source=sql2k802.discountasp.net;Initial Catalog=SQL2008_741027_jerry;Persist Security Info=True;User ID=SQL2008_741027_jerry_user;Password=Gianluca12!");
+                optionsBuilder.UseSqlServer(conn);
             }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-  
-            modelBuilder.Entity<LinkTypes>(entity =>
-            {
-                entity.HasNoKey();
-            });
 
             modelBuilder.Entity<OnTimeCustomersProjects>(entity =>
             {

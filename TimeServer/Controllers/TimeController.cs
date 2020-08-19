@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using OnTimeClasses;
+using System.Collections.Generic;
+using OnTimeService;
 
 namespace TimeServer.Controllers
 {
@@ -11,29 +10,35 @@ namespace TimeServer.Controllers
     [Route("[controller]")]
     public class TimeController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
+        private OnTimeService.OnTimeService _service;
+
 
         private readonly ILogger<TimeController> _logger;
 
         public TimeController(ILogger<TimeController> logger)
         {
             _logger = logger;
+            _service = new OnTimeService.OnTimeService();
         }
 
-        [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        [HttpGet()]
+        public IEnumerable<string> Get()
         {
-            var rng = new Random();
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateTime.Now.AddDays(index),
-                TemperatureC = rng.Next(-20, 55),
-                Summary = Summaries[rng.Next(Summaries.Length)]
-            })
-            .ToArray();
+            return new string[] { "value1", "value2" };
+        }
+
+        [Route("/customers")]
+        [HttpGet()]
+        public List<Customer> GetCustomers()
+        {
+            return _service.GetCustomers();
+        }
+
+        [Route("/customer/{id}")]
+        [HttpGet()]
+        public Customer GetCustomer(int id)
+        {
+            return _service.GetCustomer(id);
         }
     }
 }

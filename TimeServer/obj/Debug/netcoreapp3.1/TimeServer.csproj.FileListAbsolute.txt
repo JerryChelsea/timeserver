@@ -59,3 +59,9 @@ D:\Projects\TimeServer\TimeServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netco
 D:\Projects\TimeServer\TimeServer\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 D:\Projects\TimeServer\TimeServer\obj\Debug\netcoreapp3.1\TimeServer.csproj.CoreCompileInputs.cache
 D:\Projects\TimeServer\TimeServer\obj\Debug\netcoreapp3.1\TimeServer.MvcApplicationPartsAssemblyInfo.cache
+D:\Projects\TimeServer\TimeServer\bin\Debug\netcoreapp3.1\OnTimeClasses.dll
+D:\Projects\TimeServer\TimeServer\bin\Debug\netcoreapp3.1\OnTimeData.dll
+D:\Projects\TimeServer\TimeServer\bin\Debug\netcoreapp3.1\OnTimeService.dll
+D:\Projects\TimeServer\TimeServer\bin\Debug\netcoreapp3.1\OnTimeClasses.pdb
+D:\Projects\TimeServer\TimeServer\bin\Debug\netcoreapp3.1\OnTimeService.pdb
+D:\Projects\TimeServer\TimeServer\bin\Debug\netcoreapp3.1\OnTimeData.pdb

@@ -11,7 +11,7 @@ namespace OnTimeService
     {
         private TimeDataContext _context;
 
-        public OnTimeService(string conn)
+        public OnTimeService()
         {
             _context = new TimeDataContext();
         }
