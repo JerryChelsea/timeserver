@@ -1,0 +1,48 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\OnTimeData\Data\ActionType.cs" Link="ActionType.cs" />
+    <Compile Include="..\OnTimeData\Data\SmProduct.cs" Link="SmProduct.cs" />
+    <Compile Include="..\OnTimeData\Data\SmSubCategory.cs" Link="SmSubCategory.cs" />
+    <Compile Include="..\OnTimeData\Data\State.cs" Link="State.cs" />
+    <Compile Include="..\OnTimeData\Data\SubPageRef.cs" Link="SubPageRef.cs" />
+    <Compile Include="..\OnTimeData\Data\Tag.cs" Link="Tag.cs" />
+    <Compile Include="..\OnTimeData\Data\TagReference.cs" Link="TagReference.cs" />
+    <Compile Include="..\OnTimeData\Data\TimeDataContext.cs" Link="TimeDataContext.cs" />
+    <Compile Include="..\OnTimeData\Data\UsedWords.cs" Link="UsedWords.cs" />
+    <Compile Include="..\OnTimeData\Data\UserProfile.cs" Link="UserProfile.cs" />
+    <Compile Include="..\OnTimeData\Data\VwAspnetApplications.cs" Link="VwAspnetApplications.cs" />
+    <Compile Include="..\OnTimeData\Data\VwAspnetMembershipUsers.cs" Link="VwAspnetMembershipUsers.cs" />
+    <Compile Include="..\OnTimeData\Data\VwAspnetProfiles.cs" Link="VwAspnetProfiles.cs" />
+    <Compile Include="..\OnTimeData\Data\VwAspnetRoles.cs" Link="VwAspnetRoles.cs" />
+    <Compile Include="..\OnTimeData\Data\VwAspnetUsersInRoles.cs" Link="VwAspnetUsersInRoles.cs" />
+    <Compile Include="..\OnTimeData\Data\VwAspnetWebPartStatePaths.cs" Link="VwAspnetWebPartStatePaths.cs" />
+    <Compile Include="..\OnTimeData\Data\VwAspnetWebPartStateShared.cs" Link="VwAspnetWebPartStateShared.cs" />
+    <Compile Include="..\OnTimeData\Data\VwAspnetWebPartStateUser.cs" Link="VwAspnetWebPartStateUser.cs" />
+    <Compile Include="..\OnTimeData\Data\VWordpair.cs" Link="VWordpair.cs" />
+    <Compile Include="..\OnTimeData\Data\WebpagesMembership.cs" Link="WebpagesMembership.cs" />
+    <Compile Include="..\OnTimeData\Data\WebpagesOauthMembership.cs" Link="WebpagesOauthMembership.cs" />
+    <Compile Include="..\OnTimeData\Data\WebpagesRoles.cs" Link="WebpagesRoles.cs" />
+    <Compile Include="..\OnTimeData\Data\WebpagesUsersInRoles.cs" Link="WebpagesUsersInRoles.cs" />
+    <Compile Include="..\OnTimeData\Data\Word.cs" Link="Word.cs" />
+    <Compile Include="..\OnTimeData\Data\WordLink.cs" Link="WordLink.cs" />
+    <Compile Include="..\OnTimeData\Data\Wordlinklist.cs" Link="Wordlinklist.cs" />
+    <Compile Include="..\OnTimeData\Data\Wordlist.cs" Link="Wordlist.cs" />
+    <Compile Include="..\OnTimeData\Data\WordPairs.cs" Link="WordPairs.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCOre.SqlServer" Version="3.1.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+
+</Project>

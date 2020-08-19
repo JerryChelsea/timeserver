@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OnTimeClasses\OnTimeClasses.csproj" />
+    <ProjectReference Include="..\TimeData\OnTimeData.csproj" />
+  </ItemGroup>
+
+</Project>
