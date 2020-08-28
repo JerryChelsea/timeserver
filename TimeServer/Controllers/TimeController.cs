@@ -232,6 +232,22 @@ namespace TimeServer.Controllers
             }
         }
 
+        [Route("/time/worklog/{id}")]
+        [HttpDelete()]
+        public ActionResult DeleteWorkLog(int id)
+        {
+            try
+            { 
+                _service.DeleteWorkLog(id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                var p = new BadRequestObjectResult(ex);
+                return p;
+            }
+        }
+
         [Route("/time/projectwork/{id}/{start}/{end}")]
         [HttpGet()]
         public Project GetProjectWorkLog(int id, DateTime start, DateTime end)

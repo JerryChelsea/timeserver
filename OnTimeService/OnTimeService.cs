@@ -30,7 +30,7 @@ namespace OnTimeService
                     {
                         CustomerId = x.CustomerId,
                         CustomerName = x.CompanyName
-                    }).ToListAsync();
+                    }).OrderBy(c =>c.CustomerName).ToListAsync();
             }
             catch (Exception ex)
             {
@@ -219,7 +219,7 @@ namespace OnTimeService
                     WorkLogDate = x.WorkLogDateTime,
                     WorkTypeId = x.WorkLogTypeId
 
-                }).ToList();
+                }).OrderBy(x => x.WorkLogDate).ToList();
         }
 
         public WorkLog GetWorkLog(int id)
@@ -268,6 +268,16 @@ namespace OnTimeService
             }
         }
 
+        public void DeleteWorkLog(int workId)
+        {
+            var w = _context.OnTimeWorkLog.FirstOrDefault(x => x.WorkLogId == workId);
+            if (w != null)
+            {
+                _context.OnTimeWorkLog.Remove(w);
+                _context.SaveChanges();
+            }
+        }
+
 
         public Project GetProjectWork(int projectid, DateTime start, DateTime end)
         {
@@ -304,7 +314,7 @@ namespace OnTimeService
                     Name = f.Name,
                     Description = f.Description
                 });
-            return await query.ToListAsync();
+            return await query.OrderBy(f => f.Name).ToListAsync();
         }
 
 
