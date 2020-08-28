@@ -1,7 +1,3 @@
-D:\Projects\TimeServer\OnTimeService\obj\Debug\netcoreapp3.1\OnTimeService.csprojAssemblyReference.cache
-D:\Projects\TimeServer\OnTimeService\obj\Debug\netcoreapp3.1\OnTimeService.AssemblyInfoInputs.cache
-D:\Projects\TimeServer\OnTimeService\obj\Debug\netcoreapp3.1\OnTimeService.AssemblyInfo.cs
-D:\Projects\TimeServer\OnTimeService\obj\Debug\netcoreapp3.1\OnTimeService.csproj.CoreCompileInputs.cache
 D:\Projects\TimeServer\OnTimeService\bin\Debug\netcoreapp3.1\OnTimeService.deps.json
 D:\Projects\TimeServer\OnTimeService\bin\Debug\netcoreapp3.1\OnTimeService.dll
 D:\Projects\TimeServer\OnTimeService\bin\Debug\netcoreapp3.1\OnTimeService.pdb
@@ -9,6 +5,10 @@ D:\Projects\TimeServer\OnTimeService\bin\Debug\netcoreapp3.1\OnTimeClasses.dll
 D:\Projects\TimeServer\OnTimeService\bin\Debug\netcoreapp3.1\OnTimeData.dll
 D:\Projects\TimeServer\OnTimeService\bin\Debug\netcoreapp3.1\OnTimeClasses.pdb
 D:\Projects\TimeServer\OnTimeService\bin\Debug\netcoreapp3.1\OnTimeData.pdb
+D:\Projects\TimeServer\OnTimeService\obj\Debug\netcoreapp3.1\OnTimeService.csprojAssemblyReference.cache
+D:\Projects\TimeServer\OnTimeService\obj\Debug\netcoreapp3.1\OnTimeService.AssemblyInfoInputs.cache
+D:\Projects\TimeServer\OnTimeService\obj\Debug\netcoreapp3.1\OnTimeService.AssemblyInfo.cs
+D:\Projects\TimeServer\OnTimeService\obj\Debug\netcoreapp3.1\OnTimeService.csproj.CoreCompileInputs.cache
 D:\Projects\TimeServer\OnTimeService\obj\Debug\netcoreapp3.1\OnTimeService.csproj.CopyComplete
 D:\Projects\TimeServer\OnTimeService\obj\Debug\netcoreapp3.1\OnTimeService.dll
 D:\Projects\TimeServer\OnTimeService\obj\Debug\netcoreapp3.1\OnTimeService.pdb

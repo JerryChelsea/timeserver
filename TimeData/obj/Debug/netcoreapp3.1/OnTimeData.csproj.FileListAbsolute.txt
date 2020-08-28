@@ -1,9 +1,9 @@
 D:\Projects\TimeServer\TimeData\bin\Debug\netcoreapp3.1\OnTimeData.deps.json
 D:\Projects\TimeServer\TimeData\bin\Debug\netcoreapp3.1\OnTimeData.dll
+D:\Projects\TimeServer\TimeData\bin\Debug\netcoreapp3.1\OnTimeData.pdb
+D:\Projects\TimeServer\TimeData\obj\Debug\netcoreapp3.1\OnTimeData.csprojAssemblyReference.cache
 D:\Projects\TimeServer\TimeData\obj\Debug\netcoreapp3.1\OnTimeData.AssemblyInfoInputs.cache
 D:\Projects\TimeServer\TimeData\obj\Debug\netcoreapp3.1\OnTimeData.AssemblyInfo.cs
-D:\Projects\TimeServer\TimeData\obj\Debug\netcoreapp3.1\OnTimeData.csprojAssemblyReference.cache
-D:\Projects\TimeServer\TimeData\bin\Debug\netcoreapp3.1\OnTimeData.pdb
 D:\Projects\TimeServer\TimeData\obj\Debug\netcoreapp3.1\OnTimeData.csproj.CoreCompileInputs.cache
 D:\Projects\TimeServer\TimeData\obj\Debug\netcoreapp3.1\OnTimeData.dll
 D:\Projects\TimeServer\TimeData\obj\Debug\netcoreapp3.1\OnTimeData.pdb

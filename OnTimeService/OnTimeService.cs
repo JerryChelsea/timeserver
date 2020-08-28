@@ -206,6 +206,21 @@ namespace OnTimeService
             }
         }
 
+        public void DeleteFeature(int id)
+        {
+            var links = _context.OnTimeWorkLog.FirstOrDefault(x => x.ItemId == id);
+            if (links != null)
+            {
+                throw new Exception("Cannot delete this Feature - it is linked to Work items");
+            }
+
+            var f = _context.OnTimeFeatures.FirstOrDefault(x => x.FeatureId == id);
+            if (f != null)
+            {
+                _context.OnTimeFeatures.Remove(f);
+                _context.SaveChanges();
+            }
+        }
 
         public List<WorkLog> GetWorkLogs(int feature)
         {

@@ -59,6 +59,7 @@ namespace TimeServer.Controllers
             catch (Exception ex)
             {
                 var p = new BadRequestObjectResult(ex);
+                p.Value = ex.Message;
                 return p;
             }
         }
@@ -75,6 +76,7 @@ namespace TimeServer.Controllers
             catch (Exception ex)
             {
                 var p = new BadRequestObjectResult(ex);
+                p.Value = ex.Message;
                 return p;
             }
         }
@@ -105,6 +107,7 @@ namespace TimeServer.Controllers
             catch (Exception ex)
             {
                 var p = new BadRequestObjectResult(ex);
+                p.Value = ex.Message;
                 return p;
             }
         }
@@ -121,6 +124,7 @@ namespace TimeServer.Controllers
             catch (Exception ex)
             {
                 var p = new BadRequestObjectResult(ex);
+                p.Value = ex.Message;
                 return p;
             }
         }
@@ -152,6 +156,7 @@ namespace TimeServer.Controllers
             catch (Exception ex)
             {
                 var p = new BadRequestObjectResult(ex);
+                p.Value = ex.Message;
                 return p;
             }
         }
@@ -168,6 +173,24 @@ namespace TimeServer.Controllers
             catch (Exception ex)
             {
                 var p = new BadRequestObjectResult(ex);
+                p.Value = ex.Message;
+                return p;
+            }
+        }
+
+        [Route("/time/feature/{id}")]
+        [HttpDelete()]
+        public IActionResult DeleteFeature(int id)
+        {
+            try
+            {
+                _service.DeleteFeature(id);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                var p = new BadRequestObjectResult(ex);
+                p.Value = ex.Message;
                 return p;
             }
         }
@@ -212,6 +235,7 @@ namespace TimeServer.Controllers
             catch (Exception ex)
             {
                 var p = new BadRequestObjectResult(ex);
+                p.Value = ex.Message;
                 return p;
             }
         }
@@ -228,6 +252,7 @@ namespace TimeServer.Controllers
             catch (Exception ex)
             {
                 var p = new BadRequestObjectResult(ex);
+                p.Value = ex.Message;
                 return p;
             }
         }
@@ -244,6 +269,7 @@ namespace TimeServer.Controllers
             catch (Exception ex)
             {
                 var p = new BadRequestObjectResult(ex);
+                p.Value = ex.Message;
                 return p;
             }
         }
