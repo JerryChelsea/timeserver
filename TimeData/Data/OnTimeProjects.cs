@@ -7,6 +7,7 @@ namespace TimeData
     public partial class OnTimeProjects
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ProjectId { get; set; }
         public int? ParentId { get; set; }
         [Required]

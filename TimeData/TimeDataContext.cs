@@ -22,7 +22,7 @@ namespace OnTimeData
         public virtual DbSet<OnTimeCustomersProjects> OnTimeCustomersProjects { get; set; }
         public virtual DbSet<OnTimeFeatures> OnTimeFeatures { get; set; }
         public virtual DbSet<OnTimeProjects> OnTimeProjects { get; set; }
-        public virtual DbSet<OnTimeWorkLog> OnTimeWorkLogs { get; set; }
+        public virtual DbSet<OnTimeWorkLog> OnTimeWorkLog { get; set; }
     
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

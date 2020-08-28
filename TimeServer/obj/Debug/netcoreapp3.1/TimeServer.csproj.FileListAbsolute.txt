@@ -67,6 +67,11 @@ D:\Projects\TimeServer\TimeServer\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
 D:\Projects\TimeServer\TimeServer\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
 D:\Projects\TimeServer\TimeServer\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Projects\TimeServer\TimeServer\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Projects\TimeServer\TimeServer\bin\Debug\netcoreapp3.1\System.Web.Cors.dll
+D:\Projects\TimeServer\TimeServer\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+D:\Projects\TimeServer\TimeServer\bin\Debug\netcoreapp3.1\System.Web.Http.dll
+D:\Projects\TimeServer\TimeServer\bin\Debug\netcoreapp3.1\System.Web.Http.Cors.dll
+D:\Projects\TimeServer\TimeServer\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 D:\Projects\TimeServer\TimeServer\obj\Debug\netcoreapp3.1\TimeServer.csproj.CoreCompileInputs.cache
 D:\Projects\TimeServer\TimeServer\obj\Debug\netcoreapp3.1\TimeServer.MvcApplicationPartsAssemblyInfo.cs
 D:\Projects\TimeServer\TimeServer\obj\Debug\netcoreapp3.1\TimeServer.MvcApplicationPartsAssemblyInfo.cache

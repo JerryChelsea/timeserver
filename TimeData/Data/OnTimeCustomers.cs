@@ -8,13 +8,12 @@ namespace TimeData
     public partial class OnTimeCustomers
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        
         public int CustomerId { get; set; }
         [Required]
         [StringLength(100)]
         public string CompanyName { get; set; }
-        [Required]
-        [Column("CompanyURL")]
-        [StringLength(500)]
         public string CompanyUrl { get; set; }
         public int? DefectViewProjectId { get; set; }
         public int? DefectViewFilterId { get; set; }

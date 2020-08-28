@@ -9,6 +9,7 @@ namespace TimeData
     {
         [Key]
         public int FeatureId { get; set; }
+   
         public int ProjectId { get; set; }
         public int? CreatorId { get; set; }
         [StringLength(50)]

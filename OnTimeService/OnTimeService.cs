@@ -1,6 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
+using System.Threading.Tasks;
+using System.Xml.XPath;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Query.Internal;
 using OnTimeClasses;
 using OnTimeData;
 
@@ -16,16 +21,16 @@ namespace OnTimeService
             _context = new TimeDataContext();
         }
 
-        public List<Customer> GetCustomers()
+        public async Task<List<Customer>> GetCustomers()
         {
             try
             {
-               return  _context.OnTimeCustomers.Select(x => 
-                     new Customer
-                     {
-                         CustomerId = x.CustomerId,
-                         CustomerName = x.CompanyName
-                     }).ToList();
+                return await _context.OnTimeCustomers.Select(x =>
+                    new Customer
+                    {
+                        CustomerId = x.CustomerId,
+                        CustomerName = x.CompanyName
+                    }).ToListAsync();
             }
             catch (Exception ex)
             {
@@ -46,6 +51,29 @@ namespace OnTimeService
             return C;
         }
 
+        public async Task SaveCustomer(Customer customer)
+        {
+            var C = new TimeData.OnTimeCustomers();
+            C.CompanyName = customer.CustomerName;
+            _context.OnTimeCustomers.Add(C);
+           await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateCustomer(Customer customer)
+        {
+            var C = _context.OnTimeCustomers.FirstOrDefault(x => x.CustomerId == customer.CustomerId);
+            if (C != null)
+            {
+                C.CompanyName = customer.CustomerName;
+                _context.OnTimeCustomers.Update(C);
+                await _context.SaveChangesAsync();
+            }
+            else
+            {
+                throw new Exception("No Customer found");
+            }
+        }
+
         public List<Project> GetProjects(int customerId)
         {
             
@@ -62,7 +90,7 @@ namespace OnTimeService
                     DueDate = p.DueDate,
                     IsActive = p.IsActive
                 });
-            return query.ToList();
+            return query.OrderBy(x => x.ProjectName).ToList();
         }
 
         public Project GetProject(int id)
@@ -83,9 +111,48 @@ namespace OnTimeService
             return query.FirstOrDefault();
         }
 
+        public async Task SaveProject(Project project, int customerId)
+        {
+            var projId = _context.OnTimeProjects.Max(x => x.ProjectId) + 1;
+            var F = new TimeData.OnTimeProjects();
+            F.Description = project.Description;
+            F.Name = project.ProjectName;
+            F.ProjectId = projId;
+            _context.OnTimeProjects.Add(F);
+
+            var T = new TimeData.OnTimeCustomersProjects();
+            T.CustomerId = customerId;
+            T.ProjectId = F.ProjectId;
+            _context.OnTimeCustomersProjects.Add(T);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateProject(Project project)
+        {
+            var F = _context.OnTimeProjects.FirstOrDefault(p => p.ProjectId == project.ProjectId);
+            try
+            {
+                if (F != null)
+                {
+                    F.Description = project.Description;
+                    F.Name = project.ProjectName;
+                    _context.OnTimeProjects.Update(F);
+                    await _context.SaveChangesAsync();
+                }
+                else
+                {
+                    throw new Exception("Project not in database");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public List<Feature> GetFeatures(int project)
         {
-            return _context.OnTimeFeatures.Where(x => x.ProjectId == project)
+            var fs = _context.OnTimeFeatures.Where(x => x.ProjectId == project)
                 .Select(x => new Feature
                 {
                     ProjectId = x.ProjectId,
@@ -93,6 +160,7 @@ namespace OnTimeService
                     Description = x.Description,
                     Name = x.Name
                 }).ToList();
+            return fs.OrderBy(x => x.Name).ToList();
         }
 
         public Feature GetFeature(int id)
@@ -102,13 +170,46 @@ namespace OnTimeService
                 {
                     ProjectId = x.ProjectId,
                     FeatureId = x.FeatureId,
-                    Description = x.Description
+                    Description = x.Description,
+                    Name = x.Name
                 }).FirstOrDefault();
         }
 
+        public async Task SaveFeature(Feature feature)
+        {
+            var id = _context.OnTimeFeatures.Max(x => x.FeatureId) + 1;
+            var F = new TimeData.OnTimeFeatures();
+            F.Description = feature.Description;
+            F.FeatureId = id;
+            F.ProjectId = feature.ProjectId;
+            F.Name = feature.Name;
+
+            _context.OnTimeFeatures.Add(F);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateFeature(Feature feature)
+        {
+            var F = _context.OnTimeFeatures.FirstOrDefault(x => x.FeatureId == feature.FeatureId);
+            if (F != null)
+            {
+                F.Description = feature.Description;
+                F.ProjectId = feature.ProjectId;
+                F.Name = feature.Name;
+
+                _context.OnTimeFeatures.Update(F);
+                await _context.SaveChangesAsync();
+            }
+            else
+            {
+                throw new Exception("Feature not found");
+            }
+        }
+
+
         public List<WorkLog> GetWorkLogs(int feature)
         {
-            return _context.OnTimeWorkLogs.Where(x => x.ItemId == feature)
+            return _context.OnTimeWorkLog.Where(x => x.ItemId == feature)
                 .Select(x => new WorkLog
                 {
                     WorkLogId = x.WorkLogId,
@@ -123,7 +224,7 @@ namespace OnTimeService
 
         public WorkLog GetWorkLog(int id)
         {
-            return _context.OnTimeWorkLogs.Where(x => x.WorkLogId == id)
+            return _context.OnTimeWorkLog.Where(x => x.WorkLogId == id)
                 .Select(x => new WorkLog
                 {
                     WorkLogId = x.WorkLogId,
@@ -136,11 +237,43 @@ namespace OnTimeService
                 }).FirstOrDefault();
         }
 
+        public async Task SaveWorkLog(WorkLog worklog)
+        {
+            var F = new TimeData.OnTimeWorkLog();
+
+            F.Description = worklog.Description;
+            F.WorkDone = worklog.WorkDone;
+            F.WorkLogDateTime = worklog.WorkLogDate;
+            F.ItemId = worklog.FeatureId;
+
+            _context.OnTimeWorkLog.Add(F);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task UpdateWorkLog(WorkLog worklog)
+        {
+            var F = _context.OnTimeWorkLog.FirstOrDefault(x => x.WorkLogId == worklog.WorkLogId);
+            if (F != null)
+            {
+                F.Description = worklog.Description;
+                F.WorkDone = worklog.WorkDone;
+                F.WorkLogDateTime = worklog.WorkLogDate;
+
+                _context.OnTimeWorkLog.Update(F);
+                await _context.SaveChangesAsync();
+            }
+            else
+            {
+                throw new Exception("Worklog  not found");
+            }
+        }
+
+
         public Project GetProjectWork(int projectid, DateTime start, DateTime end)
         {
                 var query = (from p in _context.OnTimeProjects
                     join f in _context.OnTimeFeatures on p.ProjectId equals f.ProjectId
-                    join w in _context.OnTimeWorkLogs on f.FeatureId equals w.ItemId
+                    join w in _context.OnTimeWorkLog on f.FeatureId equals w.ItemId
                     join c in _context.OnTimeCustomersProjects on p.ProjectId equals c.ProjectId
                     where w.WorkLogDateTime >= start && w.WorkLogDateTime <= end
                     orderby w.WorkLogDateTime
@@ -157,10 +290,28 @@ namespace OnTimeService
          
         }
 
+        public async Task<List<Feature>> GetCustomerFeatures(int custId)
+        {
+            var query = (from p in _context.OnTimeProjects
+                join f in _context.OnTimeFeatures on p.ProjectId equals f.ProjectId
+                join cp in _context.OnTimeCustomersProjects on p.ProjectId equals cp.ProjectId
+                where cp.CustomerId == custId
+                select new Feature
+                {
+                    FeatureId = f.FeatureId,
+                    ProjectId = cp.ProjectId,
+                    ProjectName = p.Name,
+                    Name = f.Name,
+                    Description = f.Description
+                });
+            return await query.ToListAsync();
+        }
+
+
         private List<Feature> GetFullFeatures(int id, DateTime start, DateTime end)
         {
             var query = (from f in _context.OnTimeFeatures
-                join w in _context.OnTimeWorkLogs on f.FeatureId equals w.ItemId
+                join w in _context.OnTimeWorkLog on f.FeatureId equals w.ItemId
                 where w.WorkLogDateTime >= start && w.WorkLogDateTime <= end
                 orderby w.WorkLogDateTime
                 select new Feature
@@ -175,7 +326,7 @@ namespace OnTimeService
 
         private List<WorkLog> GetWorkLogs(int id, DateTime start, DateTime end)
         {
-            return _context.OnTimeWorkLogs
+            return _context.OnTimeWorkLog
                 .Where(x => x.ItemId == id && x.WorkLogDateTime >= start && x.WorkLogDateTime <= end)
                 .Select(x => new WorkLog
                 {
@@ -192,7 +343,7 @@ namespace OnTimeService
         {
             var query = (from p in _context.OnTimeProjects
                 join f in _context.OnTimeFeatures on p.ProjectId equals f.ProjectId
-                join w in _context.OnTimeWorkLogs on f.FeatureId equals w.ItemId
+                join w in _context.OnTimeWorkLog on f.FeatureId equals w.ItemId
                 join c in _context.OnTimeCustomersProjects on p.ProjectId equals c.ProjectId
                 join cm in _context.OnTimeCustomers on c.CustomerId equals cm.CustomerId
                 where w.WorkLogDateTime >= start && w.WorkLogDateTime <= end

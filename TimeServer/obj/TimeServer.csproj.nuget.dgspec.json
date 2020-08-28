@@ -244,6 +244,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNet.WebApi.COrs": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
             "Microsoft.EntityFrameworkCOre.SqlServer": {
               "target": "Package",
               "version": "[3.1.7, )"

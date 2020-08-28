@@ -7,6 +7,7 @@ namespace TimeData
     public partial class OnTimeWorkLog
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int WorkLogId { get; set; }
         [Column(TypeName = "datetime")]
         public DateTime WorkLogDateTime { get; set; }
