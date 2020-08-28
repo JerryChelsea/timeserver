@@ -239,7 +239,7 @@ namespace TimeServer.Controllers
             return _service.GetProjectWork(id, start, end);
         }
 
-        [Route("/time/workreport/{id}/{start}/{end}")]
+        [Route("/time/worklogs/{id}/{start}/{end}")]
         [HttpGet()]
         public List<WorkReport> GetWorkReport(int id, DateTime start, DateTime end)
         {
