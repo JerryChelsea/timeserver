@@ -6,3 +6,4 @@ D:\Projects\TimeServer\OnTimeClasses\obj\Debug\netcoreapp3.1\OnTimeClasses.Assem
 D:\Projects\TimeServer\OnTimeClasses\obj\Debug\netcoreapp3.1\OnTimeClasses.csproj.CoreCompileInputs.cache
 D:\Projects\TimeServer\OnTimeClasses\obj\Debug\netcoreapp3.1\OnTimeClasses.dll
 D:\Projects\TimeServer\OnTimeClasses\obj\Debug\netcoreapp3.1\OnTimeClasses.pdb
+D:\Projects\TimeServer\OnTimeClasses\obj\Debug\netcoreapp3.1\OnTimeClasses.csprojAssemblyReference.cache

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using OnTimeData.Data;
 using TimeData;
 using TimeData.Data;
 
@@ -23,6 +24,7 @@ namespace OnTimeData
         public virtual DbSet<OnTimeFeatures> OnTimeFeatures { get; set; }
         public virtual DbSet<OnTimeProjects> OnTimeProjects { get; set; }
         public virtual DbSet<OnTimeWorkLog> OnTimeWorkLog { get; set; }
+        public virtual DbSet<OnTimeUserDefaults> OnTimeUserDefaults { get; set; }
     
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

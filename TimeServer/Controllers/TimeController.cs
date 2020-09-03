@@ -6,6 +6,7 @@ using OnTimeClasses;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using OnTimeData.Data;
 
 namespace TimeServer.Controllers
 {
@@ -288,6 +289,12 @@ namespace TimeServer.Controllers
             return _service.GetWorkReport(id, start, end);
         }
 
-
+        [Route("/time/userDefault")]
+        [HttpGet()]
+        public OnTimeUserDefaults GetUserDeafUserDefaults()
+        {
+            var g = new Guid();
+            return _service.GeTimeUserDefaults(g);
+        }
     }
 }

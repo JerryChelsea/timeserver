@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query.Internal;
 using OnTimeClasses;
 using OnTimeData;
+using OnTimeData.Data;
 
 
 namespace OnTimeService
@@ -384,10 +385,15 @@ namespace OnTimeService
                     WorkDone = w.WorkDone,
                     WorkTypeId = w.WorkLogTypeId.HasValue ? w.WorkLogTypeId.Value : 0
 
-                }).OrderBy(x => x.WorkDate).ToList();
+                }).OrderBy(x => x.WorkDate).ThenBy(x => x.FeatureName).ToList();
 
             return query;
          
+        }
+
+        public OnTimeUserDefaults GeTimeUserDefaults(Guid userid)
+        {
+            return _context.OnTimeUserDefaults.FirstOrDefault();
         }
     }
 }
