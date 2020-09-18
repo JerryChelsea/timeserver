@@ -235,7 +235,7 @@ namespace OnTimeService
                     WorkLogDate = x.WorkLogDateTime,
                     WorkTypeId = x.WorkLogTypeId
 
-                }).OrderBy(x => x.WorkLogDate).ToList();
+                }).OrderByDescending(x => x.WorkLogDate).ToList();
         }
 
         public WorkLog GetWorkLog(int id)
