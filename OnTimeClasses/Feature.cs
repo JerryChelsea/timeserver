@@ -11,7 +11,6 @@ namespace OnTimeClasses
         public string Description { get; set; }
         public string ProjectName { get; set; }
         public List<WorkLog> WorkLogs { get; set; }
-
         public Feature()
         {
             WorkLogs = new List<WorkLog>();
